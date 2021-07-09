@@ -1,10 +1,10 @@
-# Uses python3
-import sys
-
-def get_change(m):
-    #write your code here
-    return m
-
-if __name__ == '__main__':
-    m = int(sys.stdin.read())
-    print(get_change(m))
+n = int(input())
+count = 0
+rem = n % 10
+count += n // 10
+if rem!=0:
+    count+=rem //5
+    rem = rem % 5
+if rem !=0:
+    count += rem
+print(count)

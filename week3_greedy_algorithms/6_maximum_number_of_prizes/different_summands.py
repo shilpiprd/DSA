@@ -1,15 +1,17 @@
-# Uses python3
-import sys
+n = int(input())
+i = 1
+L =[]
 
-def optimal_summands(n):
-    summands = []
-    #write your code here
-    return summands
+while n !=0:
+    n -=i
+    if n -(i+1) <0:
+        n+=i
+        i = n
+        n-=i
+        L.append(i)
+        continue
+    L.append(i)
+    i+=1
 
-if __name__ == '__main__':
-    input = sys.stdin.read()
-    n = int(input)
-    summands = optimal_summands(n)
-    print(len(summands))
-    for x in summands:
-        print(x, end=' ')
+print(len(L))
+print(*L)
